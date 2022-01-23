@@ -1,0 +1,27 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+
+    &__header {
+        padding: 32px;
+        background-color: #f8fafc;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background-color: #f8fafc;
+    }
+
+    &__footer {
+        padding: 32px;
+        background-color: #f8fafc;
+    }
+
+    &__menu-item {
+        display: flex;
+        border: none;
+        padding: 16px 32px;
+    }
+}

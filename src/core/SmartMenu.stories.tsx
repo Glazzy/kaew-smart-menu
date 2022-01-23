@@ -1,7 +1,11 @@
 import React from "react";
 import { SmartMenu } from ".";
 import Menu from "../partials/Menu";
+import MenuItem from "../partials/MenuItem";
 import NavigateToMenuOnClick from "../partials/NavigateToMenuOnClick";
+import SmartMenuContent from "../ui/SmartMenuContent";
+import SmartMenuFooter from "../ui/SmartMenuFooter";
+import SmartMenuHeader from "../ui/SmartMenuHeader";
 
 export default {
     title: 'Smartmenu',
@@ -12,16 +16,26 @@ const Template = (args: JSX.IntrinsicAttributes) => {
     return (
         <SmartMenu {...args}  defaultOpen="menu1">
             <Menu name="menu1">
-                menu1
-                <NavigateToMenuOnClick name="menu2">
-                    <button>test</button>
-                </NavigateToMenuOnClick>
+                <SmartMenuHeader>
+                    menu1
+                </SmartMenuHeader>
+                <SmartMenuContent>
+                    <MenuItem title='Support' navigateTo={'support'} />
+                    <MenuItem title='Settings' navigateTo={'settings'} />
+                    <MenuItem title='Account' navigateTo={'account'} />
+                </SmartMenuContent>
+                <SmartMenuFooter>
+                    footer
+                </SmartMenuFooter>
             </Menu>
-            <Menu name="menu2">
-                menu2
-                <NavigateToMenuOnClick name="menu1">
-                    <button>test</button>
-                </NavigateToMenuOnClick>
+            <Menu name="support">
+                support
+            </Menu>
+            <Menu name="settings">
+                settings
+            </Menu>
+            <Menu name="account">
+                account
             </Menu>
         </SmartMenu>
     )

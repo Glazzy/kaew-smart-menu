@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react"
 import useSmartMenu from "../hooks/useSmartMenu"
+import "../scss/smart-menu.scss"
 
 export interface MenuProps {
     name: string,
@@ -8,13 +9,11 @@ export interface MenuProps {
 
 export default function Menu({name, children}: MenuProps): JSX.Element | null {
     const {current} = useSmartMenu()
-
-    console.log(current)
     
     if(name !== current) return null
 
     return (
-        <div>
+        <div className="menu">
             {children}
         </div>
     )

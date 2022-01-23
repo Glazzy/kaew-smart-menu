@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import SmartmenuContext from '../context/SmartmenuContext'
+import SmartMenuContext from '../context/SmartMenuContext'
 
 export default function useSmartMenu () {
-    return useContext(SmartmenuContext)
+    return useContext(SmartMenuContext)
 }

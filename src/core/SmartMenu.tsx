@@ -1,6 +1,6 @@
 
 import React, { ReactNode, useState } from "react"
-import SmartmenuContext from "../context/SmartmenuContext"
+import SmartMenuContext from "../context/SmartMenuContext"
 
 interface SmartmenuProps {
     defaultOpen: string,
@@ -12,13 +12,15 @@ export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : J
     const [stack, setStack] = useState<string[]>([defaultOpen])
 
     const push = (value: string) => setStack(prevState => {
-        prevState.push(value)
-        return prevState
+        const nextState = [...prevState]
+        nextState.push(value)
+        return nextState
     })
 
     const pop = () => setStack(prevState => {
-        prevState.pop()
-        return prevState
+        const nextState = [...prevState]
+        nextState.pop()
+        return nextState
     })
 
     const peek = () => stack[stack.length - 1]
@@ -35,9 +37,9 @@ export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : J
 
 
     return (
-        <SmartmenuContext.Provider value={value}>
+        <SmartMenuContext.Provider value={value}>
             {children}
-        </SmartmenuContext.Provider>
+        </SmartMenuContext.Provider>
     )
 }
 
