@@ -1,4 +1,5 @@
 
+import { AnimatePresence, motion } from "framer-motion"
 import React, { ReactNode, useState } from "react"
 import SmartMenuContext from "../context/SmartMenuContext"
 
@@ -35,10 +36,15 @@ export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : J
         reset
     }
 
+    console.log(React.Children.toArray(children))
 
     return (
         <SmartMenuContext.Provider value={value}>
-            {children}
+            <div className="smart-menu">
+                
+                    {children}
+               
+            </div>
         </SmartMenuContext.Provider>
     )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { SmartMenu } from ".";
 import Menu from "../partials/Menu";
 import MenuItem from "../partials/MenuItem";
+import NavigatePreviousMenuOnClick from "../partials/NavigatePreviousMenuOnClick";
 import NavigateToMenuOnClick from "../partials/NavigateToMenuOnClick";
 import SmartMenuContent from "../ui/SmartMenuContent";
 import SmartMenuFooter from "../ui/SmartMenuFooter";
@@ -14,29 +15,48 @@ export default {
 
 const Template = (args: JSX.IntrinsicAttributes) => {
     return (
-        <SmartMenu {...args}  defaultOpen="menu1">
-            <Menu name="menu1">
-                <SmartMenuHeader>
-                    menu1
-                </SmartMenuHeader>
-                <SmartMenuContent>
-                    <MenuItem title='Support' navigateTo={'support'} />
-                    <MenuItem title='Settings' navigateTo={'settings'} />
-                    <MenuItem title='Account' navigateTo={'account'} />
-                </SmartMenuContent>
-                <SmartMenuFooter>
-                    footer
-                </SmartMenuFooter>
-            </Menu>
-            <Menu name="support">
-                support
-            </Menu>
-            <Menu name="settings">
-                settings
-            </Menu>
-            <Menu name="account">
-                account
-            </Menu>
+        <SmartMenu {...args}  defaultOpen="default">
+                <Menu name="default">
+                    <SmartMenuHeader>
+                        Default
+                    </SmartMenuHeader>
+                    <SmartMenuContent>
+                        <MenuItem title='Support' navigateTo={'support'} />
+                        <MenuItem title='Settings' navigateTo={'settings'} />
+                    </SmartMenuContent>
+                    <SmartMenuFooter>
+                        footer
+                    </SmartMenuFooter>
+                </Menu>
+                <Menu name="support">
+                    <SmartMenuHeader>
+                        <NavigatePreviousMenuOnClick>
+                            <button>back</button>
+                        </NavigatePreviousMenuOnClick>
+                        support
+                    </SmartMenuHeader>
+                    <SmartMenuContent>
+                        <MenuItem title='Default' navigateTo={'default'} />
+                        <MenuItem title='Settings' navigateTo={'settings'} />
+                        <MenuItem title='test' navigateTo={'settings'} />
+                    </SmartMenuContent>
+                    <SmartMenuFooter>
+                        footer
+                    </SmartMenuFooter>
+                </Menu>
+                <Menu name="settings">
+                    <SmartMenuHeader>
+                        settings
+                    </SmartMenuHeader>
+                    <SmartMenuContent>
+                        <MenuItem title='Default' navigateTo={'default'} />
+                        <MenuItem title='Support' navigateTo={'support'} />
+                    </SmartMenuContent>
+                    <SmartMenuFooter>
+                        footer
+                    </SmartMenuFooter>
+                </Menu>
+        
         </SmartMenu>
     )
 };

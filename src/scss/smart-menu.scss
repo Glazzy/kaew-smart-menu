@@ -1,3 +1,9 @@
+.smart-menu {
+    position: relative;
+    overflow: hidden;
+    width: 240px;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
@@ -21,6 +27,7 @@
 
     &__menu-item {
         display: flex;
+        justify-content: space-between;
         border: none;
         padding: 16px 32px;
     }

@@ -55,5 +55,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {}
+  "dependencies": {
+    "framer-motion": "^6.2.1"
+  }
 }

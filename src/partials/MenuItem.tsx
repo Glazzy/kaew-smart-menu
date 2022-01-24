@@ -12,6 +12,7 @@ export default function MenuItem({navigateTo, title, children}: MenuItemProps) {
         <NavigateToMenuOnClick name={navigateTo}>
             <button className='menu__menu-item' type="button">
                 {title || children}
+                <span>></span>
             </button>
         </NavigateToMenuOnClick>
   );
