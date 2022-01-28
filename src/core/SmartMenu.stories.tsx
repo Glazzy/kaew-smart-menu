@@ -10,7 +10,15 @@ import SmartMenuHeader from "../ui/SmartMenuHeader";
 
 export default {
     title: 'Smartmenu',
-    component: SmartMenu
+    component: SmartMenu,
+    parameters: {
+        backgrounds: {
+          default: 'dark',
+          values: [
+              { name: 'dark', value: '#171820'}
+          ]
+        },
+      },
 }
 
 const Template = (args: JSX.IntrinsicAttributes) => {

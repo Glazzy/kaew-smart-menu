@@ -10,7 +10,7 @@ interface MenuItemProps {
 export default function MenuItem({navigateTo, title, children}: MenuItemProps) {
   return (
         <NavigateToMenuOnClick name={navigateTo}>
-            <button className='menu__menu-item' type="button">
+            <button className='menu__menu-item' type="button" style={{background: 'transparent'}}>
                 {title || children}
                 <span>></span>
             </button>

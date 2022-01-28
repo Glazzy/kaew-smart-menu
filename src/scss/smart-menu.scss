@@ -2,27 +2,33 @@
     position: relative;
     overflow: hidden;
     width: 240px;
+    transition: height 0.2s linear;
+    border-radius: 8px;
+    background: #1D1E26;
+    border: 1px solid #272733;
+    color: #C3C3CE;
 }
 
 .menu {
     display: flex;
+
     flex-direction: column;
     width: 240px;
 
     &__header {
         padding: 32px;
-        background-color: #f8fafc;
+  
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        background-color: #f8fafc;
+
     }
 
     &__footer {
         padding: 32px;
-        background-color: #f8fafc;
+
     }
 
     &__menu-item {
@@ -30,5 +36,9 @@
         justify-content: space-between;
         border: none;
         padding: 16px 32px;
+
+        &:hover {
+            background-color: #272735;
+        }
     }
 }

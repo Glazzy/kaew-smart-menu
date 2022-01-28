@@ -11,14 +11,18 @@ interface SmartmenuProps {
 
 export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : JSX.Element {
     const [stack, setStack] = useState<string[]>([defaultOpen])
+    const [direction, setDirection] = useState<Number>();
+    const [height, setHeight] = useState<Number>()
 
     const push = (value: string) => setStack(prevState => {
+        setDirection(1)
         const nextState = [...prevState]
         nextState.push(value)
         return nextState
     })
 
     const pop = () => setStack(prevState => {
+        setDirection(-1)
         const nextState = [...prevState]
         nextState.pop()
         return nextState
@@ -33,6 +37,8 @@ export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : J
         current: peek(),
         navigateTo: push,
         navigatePrev: pop,
+        direction,
+        setHeight,
         reset
     }
 
@@ -40,10 +46,8 @@ export default function SmartMenu ({children, defaultOpen} : SmartmenuProps) : J
 
     return (
         <SmartMenuContext.Provider value={value}>
-            <div className="smart-menu">
-                
-                    {children}
-               
+            <div className="smart-menu" style={{height: height}}>
+                {children}
             </div>
         </SmartMenuContext.Provider>
     )
