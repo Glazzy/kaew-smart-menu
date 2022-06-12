@@ -4,7 +4,7 @@
     width: 240px;
     transition: height 0.2s linear;
     border-radius: 8px;
-    background: #1D1E26;
+    background-color: #262837;
     border: 1px solid #272733;
     color: #C3C3CE;
 }
@@ -35,10 +35,14 @@
         display: flex;
         justify-content: space-between;
         border: none;
+        border-left: 2px solid transparent;
         padding: 16px 32px;
+        border-top: 1px solid lighten(#262837, 5%);
+        background: #262837;
 
         &:hover {
-            background-color: #272735;
+            border-left: 2px solid #675DB8;
+            background-color: lighten(#262837, 2%);
         }
     }
 }
